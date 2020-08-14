@@ -1,0 +1,18 @@
+.map {
+  height: 100vh;
+  width: 100%;
+}
+
+.leaflet-control-zoom a {
+  background: #383838 !important;
+  color: #ffffff80;
+}
+
+.leaflet-control-zoom > a.leaflet-disabled {
+  color: #ffffff24 !important;
+}
+
+.leaflet-control-zoom > a:not(.leaflet-disabled):hover {
+  background: #38383880 !important;
+  color: #ffffff80;
+}

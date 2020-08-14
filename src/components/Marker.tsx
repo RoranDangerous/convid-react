@@ -10,8 +10,8 @@ interface IProps {
 
 const useStyles = makeStyles({
 	icon: {
-		height: number => `${number > 100000 ? '48px' : '36px'} !important`,
-		width: number => `${number > 100000 ? '48px' : '36px'} !important`,
+		height: (size: number) => `${size*8}px !important`,
+		width: (size: number) => `${size*8}px !important`,
 		borderRadius: "50%",
 		background: "#ff000045",
 		display: "flex",
@@ -23,7 +23,7 @@ const useStyles = makeStyles({
 
 const Marker = (props: IProps) => {
 	const { position, number } = props;
-	const classes = useStyles(number);
+	const classes = useStyles(Math.max(number.toString().length, 3));
 	const icon = new L.DivIcon({
 		className: classes.icon,
 		html: `<div>${number}</div>`

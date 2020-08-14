@@ -1,12 +1,22 @@
 export const SET_COUNTRIES = 'SET_COUNTRIES';
 
-export type IState = {
-  countries: { [country: string]: any }
-};
-
 interface ISetCountries {
   type: typeof SET_COUNTRIES
   payload: any[]
 }
 
-export type ITypes = ISetCountries;
+
+export const SET_TOTAL = 'SET_TOTAL';
+
+interface ISetTotal {
+  type: typeof SET_TOTAL,
+  payload: any
+}
+
+
+export type ITypes = ISetCountries | ISetTotal;
+
+export type IState = {
+  countries: { [country: string]: any },
+  total: any
+};

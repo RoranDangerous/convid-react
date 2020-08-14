@@ -8,3 +8,10 @@ export const fetchCountries = () => (dispatch: Dispatch) => {
   .then((payload: any[]) => dispatch({ type: types.SET_COUNTRIES, payload}))
   .catch(err => console.error(err.message))
 }
+
+export const fetchTotal = () => (dispatch: Dispatch) => {
+  fetch(urls.TOTAL)
+  .then((response: Response) => response.json())
+  .then((payload: any) => dispatch({ type: types.SET_TOTAL, payload}))
+  .catch(err => console.error(err.message))
+}
