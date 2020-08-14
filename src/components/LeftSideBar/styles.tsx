@@ -1,25 +1,17 @@
 import { makeStyles } from '@material-ui/core';
 
+const drawerWidth = '325px';
 export default makeStyles({
-  toggle: {
-    position: 'fixed',
-    color: '#ffffff80',
-    top: '1rem',
-    left: '1rem',
-    zIndex: 999,
-    background: '#383838',
-    minWidth: 'unset',
-    '&:hover': {
-      background: '#38383880'
-    }
-  },
   drawer: {
     '& .MuiBackdrop-root':{
       background: 'rgba(0,0,0,0.2)'
+    },
+    '& .MuiDrawer-paperAnchorDockedLeft': {
+      borderRight: '1px solid rgb(0 0 0 / 75%)'
     }
   },
   content: {
-    width: '325px',
+    width: drawerWidth,
     background: '#1f1f1f',
     height: '100%',
     display: 'flex',
@@ -45,6 +37,9 @@ export default makeStyles({
     overflowY: 'scroll',
     '& .MuiListItem-root:hover': {
       background: 'rgba(255, 255, 255, 0.025)'
+    },
+    '& .MuiListItemText-root': {
+      margin: 0
     }
   },
   countryTotal: {

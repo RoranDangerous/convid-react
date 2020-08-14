@@ -3,7 +3,8 @@ import * as types from './types';
 
 const initialState: types.IState = {
   countries: {},
-  total: {}
+  total: {},
+  fullScreen: true
 }
 
 export default (state:types.IState = initialState, action: types.ITypes) => {
@@ -19,6 +20,10 @@ export default (state:types.IState = initialState, action: types.ITypes) => {
     case types.SET_TOTAL:
       return Object.assign({} , state, {
         total: action.payload
+      })
+    case types.TOGGLE_FULL:
+      return Object.assign({} , state, {
+        fullScreen: !state.fullScreen
       })
     default:
       return state;

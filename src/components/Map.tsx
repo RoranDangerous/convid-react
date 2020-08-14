@@ -4,6 +4,7 @@ import L from 'leaflet';
 import { Map as LeafletMap, TileLayer, ZoomControl } from 'react-leaflet';
 import { IState } from 'redux/types';
 import Marker from './Marker';
+import MapOptions from './MapOptions';
 
 const mapState = (state: IState) => ({ countries: state.countries });
 
@@ -32,6 +33,7 @@ const Map: React.FC<Props> = props => {
 				Object.values(countries).map((v: any, i: number) => <Marker key={i} position={[v.countryInfo?.lat, v.countryInfo?.long]} number={v.cases}/>)
 			}
 			<ZoomControl position='bottomright' />
+			<MapOptions position='topright' />
 		</LeafletMap>
 	)
 }

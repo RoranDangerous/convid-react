@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Map from 'components/Map';
 import { fetchCountries, fetchTotal } from 'redux/actions';
 import { bindActionCreators, Dispatch } from 'redux';
-import LeftSidebar from 'components/LeftSidebar';
+import LeftSideBar from 'components/LeftSideBar';
+import RightSideBar from 'components/RightSideBar';
 
 const mapDispatch = (dispatch: Dispatch) => {
   return bindActionCreators(
@@ -21,8 +22,9 @@ export default connect(null, mapDispatch)(({fetchCountries, fetchTotal}) => {
 
   return (
     <>
-      <LeftSidebar />
+      <LeftSideBar />
       <Map/>
+      <RightSideBar />
     </>
   )
 });

@@ -14,9 +14,17 @@ interface ISetTotal {
 }
 
 
-export type ITypes = ISetCountries | ISetTotal;
+export const TOGGLE_FULL = 'TOGGLE_FULL';
+
+interface IToggleFull {
+  type: typeof TOGGLE_FULL
+}
+
+
+export type ITypes = ISetCountries | ISetTotal | IToggleFull;
 
 export type IState = {
   countries: { [country: string]: any },
-  total: any
+  total: any,
+  fullScreen: boolean
 };

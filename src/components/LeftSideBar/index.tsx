@@ -3,37 +3,30 @@ import { connect } from 'react-redux';
 import { IState } from 'redux/types';
 import {
   Drawer,
-  Button,
   Typography,
   List,
   ListItem,
   ListItemText
 } from '@material-ui/core';
-import { Reorder } from '@material-ui/icons';
 import { addCommas } from 'utils';
 import useStyles from './styles';
 
-const LeftSidebar = () => {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState<boolean>(true);
+const mapState = (state: IState) => ({ countries: state.countries, total: state.total, open: !state.fullScreen });
+
+type Props = ReturnType<typeof mapState>;
+
+const LeftSideBar = (props: Props) => {
+  const { open } = props;
+  const classes = useStyles(open);
 
   return (
-    <>
-      <Button className={classes.toggle} onClick={() => setOpen(true)}>
-        <Reorder/>
-      </Button>
-      <Drawer className={classes.drawer} anchor={'left'} open={open} onClose={() => setOpen(false)}>
-        <Content />
-      </Drawer>
-    </>
+    <Drawer className={classes.drawer} variant='persistent' anchor='left' open={open}>
+      <Content />
+    </Drawer>
   )
 }
 
-const mapState = (state: IState) => ({ countries: state.countries, total: state.total });
-
-type ContentProps = ReturnType<typeof mapState>;
-
-const Content = connect(mapState)((props: ContentProps) => {
+const Content = connect(mapState)((props: Props) => {
   const { countries, total } = props;
   const classes = useStyles();
 
@@ -50,12 +43,11 @@ const Content = connect(mapState)((props: ContentProps) => {
             <ListItemText
               primary={v.country}
               primaryTypographyProps={{
-                variant: 'h6',
                 className: classes.countryName
               }}
               secondary={addCommas(`${v.cases || '-'}`)}
               secondaryTypographyProps={{
-                variant: 'h5',
+                variant: 'h6',
                 className: classes.countryTotal
               }}
             />
@@ -71,4 +63,4 @@ const Content = connect(mapState)((props: ContentProps) => {
   )
 })
 
-export default LeftSidebar;
+export default connect(mapState)(LeftSideBar);

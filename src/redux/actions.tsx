@@ -15,3 +15,5 @@ export const fetchTotal = () => (dispatch: Dispatch) => {
   .then((payload: any) => dispatch({ type: types.SET_TOTAL, payload}))
   .catch(err => console.error(err.message))
 }
+
+export const toggleFullScreenMap = () => ({ type: types.TOGGLE_FULL })
