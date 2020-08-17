@@ -5,6 +5,7 @@ import { IState } from 'redux/types';
 
 import { Drawer } from '@material-ui/core';
 import useStyles from './styles';
+import Summary from './Summary';
 
 const mapState = (state: IState) => ({ open: !state.fullScreen });
 
@@ -26,7 +27,7 @@ const Content = connect(mapState)((props: Props) => {
 
   return (
     <div className={classes.content}>
-      
+      <Summary/>
     </div>
   )
 })

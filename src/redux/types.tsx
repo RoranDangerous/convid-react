@@ -21,10 +21,19 @@ interface IToggleFull {
 }
 
 
-export type ITypes = ISetCountries | ISetTotal | IToggleFull;
+export const SET_COUNTRY = 'SET_COUNTRY';
+
+interface ISetCountry {
+  type: typeof SET_COUNTRY,
+  payload: string | null
+}
+
+
+export type ITypes = ISetCountries | ISetTotal | IToggleFull | ISetCountry;
 
 export type IState = {
   countries: { [country: string]: any },
   total: any,
-  fullScreen: boolean
+  fullScreen: boolean,
+  selectedCountry: string | null
 };
