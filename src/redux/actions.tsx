@@ -17,3 +17,5 @@ export const fetchTotal = () => (dispatch: Dispatch) => {
 }
 
 export const toggleFullScreenMap = () => ({ type: types.TOGGLE_FULL })
+
+export const setCountry = (country: string | null) => ({ type: types.SET_COUNTRY, payload: country })

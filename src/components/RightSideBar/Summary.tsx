@@ -1,12 +1,9 @@
 import React from 'react';
 import { connect} from 'react-redux';
 import { IState } from 'redux/types';
-import {
-  makeStyles,
-  Typography
-} from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import useStyles from './styles';
 import { addCommas } from 'utils';
-import DailyChart from './DailyChart';
 
 const rows = [
   {
@@ -42,21 +39,6 @@ const mapState = (state: IState) => ({
   total: state.total
 })
 
-const useStyles = makeStyles({
-  title: {
-    padding: '1.5rem',
-    color: '#ffffffc4'
-  },
-  row: {
-    display: 'flex',
-    color: '#ffffffc4',
-    padding: '0.25rem 1rem',
-    '& .MuiTypography-root': {
-      flexGrow: 1,
-      flexBasis: '-moz-available'
-    }
-  }
-})
 
 const Summary = (props: ReturnType<typeof mapState>) => {
   const { selectedCountry, total, countries } = props;
@@ -68,7 +50,7 @@ const Summary = (props: ReturnType<typeof mapState>) => {
   }
 
   return (
-    <>
+    <div className={classes.section}>
       <div className={classes.title}>
         <Typography align='center' variant='h4'>{ selectedCountry ? selectedCountry : 'Worldwide'}</Typography>
       </div>
@@ -82,8 +64,7 @@ const Summary = (props: ReturnType<typeof mapState>) => {
           ))
         }
       </div>
-      <DailyChart />
-    </>
+    </div>
   )
 }
 

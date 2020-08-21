@@ -18,4 +18,20 @@ export default makeStyles({
     display: 'flex',
     flexDirection: 'column'
   },
+  section: {
+    flexGrow: 1
+  },
+  title: {
+    padding: '1.5rem',
+    color: '#ffffffc4'
+  },
+  row: {
+    display: 'flex',
+    color: '#ffffffc4',
+    padding: '0.25rem 1rem',
+    '& .MuiTypography-root': {
+      flexGrow: 1,
+      flexBasis: '-moz-available'
+    }
+  }
 });
