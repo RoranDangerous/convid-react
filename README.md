@@ -1,3 +1,23 @@
+### Covid Insight
+
+Covid Insight is a single-page React application that shows the latest update on the numbers related to the CoVid virus.
+
+![alt text](https://github.com/RoranDangerous/covid-react/blob/master/ui.png?raw=true)
+
+<br/>
+
+## TODO:
+
+This project is open for anyone willing to contribute. List of things people can do, but not limited to:
+
+* Add support for different data category (currently shows number of cases), i.e. recovered cases, deaths, etc.
+* Add a background task to update date periodically
+* Add serviceWorker functionality
+* Mobile support
+
+<br/>
+<br/>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
