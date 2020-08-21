@@ -54,15 +54,13 @@ const Summary = (props: ReturnType<typeof mapState>) => {
       <div className={classes.title}>
         <Typography align='center' variant='h4'>{ selectedCountry ? selectedCountry : 'Worldwide'}</Typography>
       </div>
-      <div>
-        {
-          rows.map((v: any, i: number) => (
-            <div key={i} className={classes.row}>
-              <Typography>{v.label}:</Typography>
-              <Typography align='center' style={{ color: v.color }}>{v.value(instance)}</Typography>
-            </div>
-          ))
-        }
+      <div className={classes.row}>
+        <div className={classes.labelCol}>
+          {rows.map((v: any, i: number) => <Typography key={i}>{v.label}:</Typography>)}
+        </div>
+        <div className={classes.valueCol}>
+          {rows.map((v: any, i: number) => <Typography key={i} align='center' style={{ color: v.color }}>{v.value(instance)}</Typography>)}
+        </div>
       </div>
     </div>
   )

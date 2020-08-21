@@ -20,6 +20,7 @@ export default makeStyles({
   total: {
     width: '100%',
     padding: '1.5rem',
+    borderBottom: '1px solid #ffffff1a',
     '&:hover': {
       cursor: 'pointer',
       background: 'rgba(255, 255, 255, 0.025)'
@@ -35,6 +36,9 @@ export default makeStyles({
     color: '#ffffffc4',
     flexGrow: 1,
     overflowY: 'scroll',
+    '& .MuiListItem-root:not(:first-child)': {
+      borderTop: '1px solid #ffffff1a'
+    },
     '& .MuiListItem-root:hover': {
       background: 'rgba(255, 255, 255, 0.025)'
     },
@@ -51,6 +55,7 @@ export default makeStyles({
   date: {
     color: '#ffffffc4',
     padding: '1rem 0',
-    flexGrow: 0
+    flexGrow: 0,
+    borderTop: '1px solid #ffffff1a'
   }
 })

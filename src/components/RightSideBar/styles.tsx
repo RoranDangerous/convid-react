@@ -28,10 +28,16 @@ export default makeStyles({
   row: {
     display: 'flex',
     color: '#ffffffc4',
-    padding: '0.25rem 1rem',
+    padding: '0.25rem 2rem',
+    justifyContent: 'space-between',
     '& .MuiTypography-root': {
-      flexGrow: 1,
-      flexBasis: '-moz-available'
+      margin: '.5rem 0'
     }
+  },
+  labelCol: {
+    flexGrow: 5
+  },
+  valueCol: {
+    flexGrow: 1
   }
 });
